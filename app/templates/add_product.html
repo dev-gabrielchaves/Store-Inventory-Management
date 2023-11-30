@@ -26,16 +26,16 @@
             {% endif %}
         </div>
         <div class="form-group">
-            {{ form.type.label }}
-            {% if form.type.errors %}
-            {{ form.type(class="form-control") }}
+            {{ form.family.label }}
+            {% if form.family.errors %}
+            {{ form.family(class="form-control") }}
                 <div class="invalid-feedback">
-                    {% for error in form.type.errors %}
+                    {% for error in form.family.errors %}
                         <span>{{error}}</span>
                     {% endfor %}
                 </div>
             {% else %}
-                {{ form.type(class="form-control") }}
+                {{ form.family(class="form-control") }}
             {% endif %}
         </div>
         <div class="form-group">

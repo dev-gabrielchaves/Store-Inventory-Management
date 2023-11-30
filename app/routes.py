@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, flash, session, abort
 from app import app, db, bcrypt
 from app.forms import RegistrationForm, LoginForm, ProductForm
-from app.models import User
+from app.models import User, Product
 
 @app.route('/')
 def home():
@@ -43,7 +43,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    if session.get('username'):
+    if session.get('id'):
         session.clear()
         return redirect(url_for('home'))
     else:
@@ -59,14 +59,15 @@ def store_management():
         flash("You haven't logged in yet!", 'error')
         return redirect(url_for('login'))
 
-# Undone
-# Link form to database
-@app.route('/add-product')
+@app.route('/add-product', methods=['POST', 'GET'])
 def add_product():
     if session.get('id'):
         form = ProductForm()
         if form.validate_on_submit(): 
-            pass
+            product = Product(name=form.name.data, family=form.family.data, amount=form.amount.data, user_id=session.get('id'))
+            db.session.add(product)
+            db.session.commit()
+            return redirect(url_for('store_management'))
         return render_template('add_product.html', form=form)
     else:
         flash("You haven't logged in yet!", 'error')

@@ -27,6 +27,6 @@ class LoginForm(FlaskForm):
 
 class ProductForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
-    type = StringField('Type', validators=[DataRequired()])
+    family = StringField('Type', validators=[DataRequired()])
     amount = IntegerField('Amount', validators=[DataRequired()])
     submit = SubmitField('Add Product')
