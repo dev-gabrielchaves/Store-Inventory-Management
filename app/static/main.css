@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    min-height: 100vh;
+    background-color: #eee;
+    display: flex;
+}
+.container {
+    width: 500px;
+    min-width: 300px;
+    max-width: 90%;
+    margin: auto;
+}
+/* Home page */
+.container h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: rgb(109, 62, 0);
+}
+.container .home-access {
+    color: rgb(170, 101, 11);
+    margin-bottom: 10px;
+}
+.container .home-access a{
+    color: rgb(170, 101, 11);
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    margin-top: 10px;
+}
+/* Login and Register pages CSS */
+.container form {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    padding: 20px
+}
+.container form h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: rgb(170, 101, 11);
+}
+.container form hr {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(170, 101, 11);
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+.container form .form-control {
+    width: 100%;
+    height: 35px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.container form label {
+    color: rgb(170, 101, 11);
+}
+.container form .btn {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(170, 101, 11);
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.15s;
+}
+.container form .btn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+.container form .btn:active {
+    opacity: 0.6;
+}
+.container .question {
+    color: rgb(170, 101, 11);
+    margin-top: 10px;
+}
+.container .question a{
+    color: rgb(170, 101, 11);
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.container form .form-group .invalid-feedback {
+    margin-top: -13.5px;
+    margin-bottom: 15px;
+    font-size: 13.5px;
+    font-style: italic;
+    color: red;
+}
+/* Protected Page */
+.container h3 {
+    color: rgb(170, 101, 11);
+    margin-bottom: 10px;
+}
+.container ul {
+    list-style-type: none;
+}
+.container ul li {
+    color: rgb(170, 101, 11);
+    font-style: italic;
+}
+/* Flash Messages */
+.container .error,
+.container .success,
+.container .warning {
+    font-style: italic;
+    /* TOP | RIGHT | BOTTOM | LEFT */
+    padding: 12px 8px 15px 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.container .error {
+    background-color: rgb(255, 90, 90);
+    color: white;
+}
+.container .success {
+    background-color: rgb(90, 255, 145);
+    color: black;
+}
+.container .warning {
+    background-color: rgb(252, 255, 90);
+    color: black;
+}
