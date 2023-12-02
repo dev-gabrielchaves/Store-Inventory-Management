@@ -1,7 +1,8 @@
+from flask import session
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, EmailField, PasswordField, SubmitField, IntegerField
 from wtforms.validators import Length, EqualTo, DataRequired, ValidationError
-from app.models import User
+from app.models import User, Product
 
 def validate_username(form, username):
         user = User.query.filter_by(username=username.data).first()
@@ -25,8 +26,13 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
 
+def validate_product_name(form, product_name):
+        product = Product.query.filter_by(user_id=session.get('id'), name=product_name.data).first()
+        if product:
+            raise ValidationError('This product was already registered in the system.')
+
 class ProductForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired(), validate_product_name])
     family = StringField('Type', validators=[DataRequired()])
     amount = IntegerField('Amount', validators=[DataRequired()])
     submit = SubmitField('Add Product')

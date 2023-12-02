@@ -1,4 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Here will be the store items!</h1>
+<div class="container">
+    <h1 class="home-title">Store Management Application</h1>
+    <table class="users-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.family}}</td>
+                <td>{{product.amount}}</td>
+                <td><a href="/edit/{{product.id}}">✏️</a> | <a href="/delete/{{product.id}}">❌</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="button" class="home-btn" onclick="window.location.href='/add-product'">Add Product</button>
+</div>
 {% endblock content %}

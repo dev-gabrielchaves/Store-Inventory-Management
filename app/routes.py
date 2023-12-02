@@ -5,7 +5,10 @@ from app.models import User, Product
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    if session.get('id'):
+        return redirect(url_for('store_management'))
+    else:    
+        return render_template('home.html')
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
@@ -50,11 +53,11 @@ def logout():
         flash("You haven't logged in yet!", 'error')
         return redirect(url_for('login'))
 
-# Undone
 @app.route('/store-management')
 def store_management():
     if session.get('id'):
-        return render_template('store_management.html')
+        products = Product.query.filter_by(user_id=session.get('id'))
+        return render_template('store_management.html', products=products)
     else:
         flash("You haven't logged in yet!", 'error')
         return redirect(url_for('login'))

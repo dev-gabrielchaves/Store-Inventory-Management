@@ -107,18 +107,6 @@ body {
     font-style: italic;
     color: red;
 }
-/* Protected Page */
-.container h3 {
-    color: rgb(170, 101, 11);
-    margin-bottom: 10px;
-}
-.container ul {
-    list-style-type: none;
-}
-.container ul li {
-    color: rgb(170, 101, 11);
-    font-style: italic;
-}
 /* Flash Messages */
 .container .error,
 .container .success,
@@ -141,4 +129,67 @@ body {
 .container .warning {
     background-color: rgb(252, 255, 90);
     color: black;
+}
+/* Store Page */
+/* Main Page */
+.home-title {
+    text-align: center;
+    font-style: italic;
+    color: white;
+}
+.users-table {
+    border-collapse: collapse;
+    margin: 17.5px 0 10px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 100%;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.users-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.users-table th,
+.users-table td {
+    padding: 12px 15px;
+}
+.users-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.users-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+.users-table tbody tr:nth-of-type(odd) {
+    background-color: white;
+}
+.users-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.users-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.home-btn {
+    padding: 8px 15px;
+    border-radius: 7.5px;
+    border: none;
+    background-color: #009879;
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.15s;
+}
+.home-btn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+.home-btn:active {
+    opacity: 0.6;
+}
+/* Link */
+a {
+    text-decoration: none;
+    color: #009879;
+    font-weight: bold;
 }
