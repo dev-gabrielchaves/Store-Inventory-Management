@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %} 
+        <div class="{{category}}">{{message}}</div> 
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
     <h1 class="home-title">Store Management Application</h1>
     <table class="users-table">
         <thead>
@@ -17,7 +24,11 @@
                 <td>{{product.name}}</td>
                 <td>{{product.family}}</td>
                 <td>{{product.amount}}</td>
-                <td><a href="/edit/{{product.id}}">✏️</a> | <a href="/delete/{{product.id}}">❌</a></td>
+                <td>
+                    <a href="/edit-product/{{product.id}}">✏️</a> 
+                    | 
+                    <a href="/delete-product/{{product.id}}">❌</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

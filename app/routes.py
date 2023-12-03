@@ -75,3 +75,18 @@ def add_product():
     else:
         flash("You haven't logged in yet!", 'error')
         return redirect(url_for('login'))
+    
+@app.route('/delete-product/<id>')
+def delete(id):
+    if session.get('id'):
+        try:
+            product = Product.query.filter_by(id=id, user_id=session.get('id')).first()
+            db.session.delete(product)
+            db.session.commit()
+            return redirect(url_for('store_management'))
+        except:
+            flash("Product not found!", 'error')
+            return redirect(url_for('store_management'))
+    else:
+        flash("You haven't logged in yet!", 'error')
+        return redirect(url_for('login'))
