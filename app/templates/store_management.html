@@ -23,7 +23,11 @@
             <tr>
                 <td>{{product.name}}</td>
                 <td>{{product.family}}</td>
-                <td>{{product.amount}}</td>
+                <td>
+                    <a href="/increase-product-amount/{{product.id}}">➕</a>  
+                    {{product.amount}} 
+                    <a href="/decrease-product-amount/{{product.id}}">➖</a>
+                </td>
                 <td>
                     <a href="/edit-product/{{product.id}}">✏️</a> 
                     | 
