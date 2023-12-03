@@ -245,17 +245,6 @@ a {
 .container .product-form .btn:active {
     opacity: 0.6;
 }
-.container .question {
-    color: rgb(75, 75, 75);
-    margin-top: 10px;
-}
-.container .question a{
-    color: rgb(75, 75, 75);
-    font-weight: bold;
-    font-style: italic;
-    text-decoration: none;
-    margin-top: 10px;
-}
 .container .product-form .form-group .invalid-feedback {
     margin-top: -13.5px;
     margin-bottom: 15px;
