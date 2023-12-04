@@ -252,3 +252,9 @@ a {
     font-style: italic;
     color: red;
 }
+/* Style for the top right element */
+.exit-link {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}

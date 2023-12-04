@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="exit-link">
+    <a href="{{url_for('logout')}}">🚪🏃</a>
+</div>
 <div class="container">
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
@@ -8,14 +11,14 @@
         {% endfor %}
     {% endif %}
     {% endwith %}
-    <h1 class="store-title">Store Management Application</h1>
+    <h1 class="store-title">Store Management</h1>
     <table class="products-table">
         <thead>
             <tr>
                 <th>Product Name</th>
                 <th>Type</th>
                 <th>Amount</th>
-                <th>Actions</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -29,8 +32,6 @@
                     <a href="/decrease-product-amount/{{product.id}}">➖</a>
                 </td>
                 <td>
-                    <a href="/edit-product/{{product.id}}">✏️</a> 
-                    | 
                     <a href="/delete-product/{{product.id}}">❌</a>
                 </td>
             </tr>
