@@ -8,8 +8,9 @@
             {% endfor %}
         {% endif %}
         {% endwith %}
-    <h1 class="home-title">This is the home page!</h1>
-    <p class="home-access">If you wanna login, click <a href="{{url_for('login')}}">here</a>!</p>
-    <p class="home-access">If you wanna register, click <a href="{{url_for('register')}}">here</a>!</p>
+    <h1 class="home-title">Welcome to the Store Inventory Management Application!</h1>
+    <p class="home-access">Manage your inventory was never so easy, click 
+        <a href="{{url_for('login')}}">here</a> and start now!
+    </p>
 </div>
 {% endblock content %}

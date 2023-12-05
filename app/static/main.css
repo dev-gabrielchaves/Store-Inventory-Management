@@ -15,22 +15,31 @@ body {
     max-width: 90%;
     margin: auto;
 }
+/* Link */
+a {
+    text-decoration: none;
+}
 /* Home page */
 .container .home-title {
     text-align: center;
-    margin-bottom: 50px;
-    color: rgb(109, 62, 0);
+    margin-bottom: 30px;
+    color: rgb(75, 75, 75);
 }
 .container .home-access {
-    color: rgb(170, 101, 11);
+    color: grey;
     margin-bottom: 10px;
 }
 .container .home-access a{
-    color: rgb(170, 101, 11);
+    color: grey;
     font-weight: bold;
     font-style: italic;
     text-decoration: none;
     margin-top: 10px;
+    transition: color 0.15s;
+}
+.container .home-access a:hover{
+    color: black;
+    text-decoration: underline;
 }
 /* Login and Register pages CSS */
 .container form {
@@ -44,12 +53,12 @@ body {
 .container form h1 {
     text-align: center;
     margin-bottom: 15px;
-    color: rgb(170, 101, 11);
+    color: rgb(75, 75, 75);
 }
 .container form hr {
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(170, 101, 11);
+    border-color: rgb(75, 75, 75);
     margin-bottom: 15px;
     opacity: 0.5;
 }
@@ -68,7 +77,7 @@ body {
     padding-right: 8px;
 }
 .container form label {
-    color: rgb(170, 101, 11);
+    color: rgb(90, 90, 90);
 }
 .container form .btn {
     padding-top: 8px;
@@ -77,7 +86,7 @@ body {
     padding-right: 15px;
     border-radius: 20px;
     border: none;
-    background-color: rgb(170, 101, 11);
+    background-color: rgb(75, 75, 75);
     color: white;
     font-weight: bold;
     transition: opacity 0.15s;
@@ -90,15 +99,20 @@ body {
     opacity: 0.6;
 }
 .container .question {
-    color: rgb(170, 101, 11);
+    color: grey;
     margin-top: 10px;
 }
 .container .question a{
-    color: rgb(170, 101, 11);
+    color: grey;
     font-weight: bold;
     font-style: italic;
     text-decoration: none;
     margin-top: 10px;
+    transition: color 0.15s;
+}
+.container .question a:hover{
+    color: black;
+    text-decoration: underline;
 }
 .container form .form-group .invalid-feedback {
     margin-top: -13.5px;
@@ -112,7 +126,6 @@ body {
 .container .success,
 .container .warning {
     font-style: italic;
-    /* TOP | RIGHT | BOTTOM | LEFT */
     padding: 12px 8px 15px 8px;
     margin-bottom: 15px;
     border-radius: 4px;
@@ -182,12 +195,6 @@ body {
 .store-btn:active {
     opacity: 0.6;
 }
-/* Link */
-a {
-    text-decoration: none;
-    color: #009879;
-    font-weight: bold;
-}
 /* Product page */
 .container .product-form {
     width: 100%;
@@ -255,6 +262,19 @@ a {
 /* Style for the top right element */
 .exit-link {
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 25px;
+    right: 25px;
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.exit-link a {
+    font-style: italic;
+    color: black;
+    font-weight: bold;
+    transition: color 0.15s;
+}
+.exit-link a:hover {
+    color: grey;
 }
