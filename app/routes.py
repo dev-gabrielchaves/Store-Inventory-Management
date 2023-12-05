@@ -96,8 +96,11 @@ def increase_product_amount(id):
     if session.get('id'):
         try:
             product = Product.query.filter_by(id=id, user_id=session.get('id')).first()
-            product.amount += 1
-            db.session.commit()
+            if product.amount == 999:
+                flash('The amount can\'t exceed the value of 999.', 'warning')
+            else:
+                product.amount += 1
+                db.session.commit()
             return redirect(url_for('store_management'))
         except:
             flash("Product not found!", 'error')
@@ -111,8 +114,11 @@ def decrease_product_amount(id):
     if session.get('id'):
         try:
             product = Product.query.filter_by(id=id, user_id=session.get('id')).first()
-            product.amount -= 1
-            db.session.commit()
+            if product.amount == 0:
+                flash('The amount can\'t be less than 0.', 'warning')
+            else:
+                product.amount -= 1
+                db.session.commit()
             return redirect(url_for('store_management'))
         except:
             flash("Product not found!", 'error')

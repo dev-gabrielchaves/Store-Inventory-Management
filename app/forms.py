@@ -1,7 +1,7 @@
 from flask import session
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, EmailField, PasswordField, SubmitField, IntegerField
-from wtforms.validators import Length, EqualTo, DataRequired, ValidationError
+from wtforms.validators import Length, EqualTo, DataRequired, ValidationError, NumberRange
 from app.models import User, Product
 
 def validate_username(form, username):
@@ -34,5 +34,5 @@ def validate_product_name(form, product_name):
 class ProductForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired(), validate_product_name])
     family = StringField('Type', validators=[DataRequired()])
-    amount = IntegerField('Amount', validators=[DataRequired()])
+    amount = IntegerField('Amount', validators=[DataRequired(), NumberRange(min=0, max=1000)])
     submit = SubmitField('Add Product')
