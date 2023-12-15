@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="exit-link">
-    <a href="{{url_for('logout')}}">Logout</a>
+    <a href="{{url_for('users.logout')}}">Logout</a>
 </div>
 <div class="container">
     {% with messages = get_flashed_messages(with_categories=true) %}

@@ -1,12 +1,25 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+from app.config import Config
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'This Is The Secret Key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
-db = SQLAlchemy(app)
-app.app_context().push()
-bcrypt = Bcrypt(app)
+db = SQLAlchemy()
+bcrypt = Bcrypt()
 
-from app import routes
+def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(Config)
+
+    db.init_app(app)
+    bcrypt.init_app(app)
+
+    app.app_context().push()
+
+    from app.users.routes import users
+    from app.products.routes import products
+    from app.main.routes import main
+    app.register_blueprint(users)
+    app.register_blueprint(products)
+    app.register_blueprint(main)
+
+    return app
