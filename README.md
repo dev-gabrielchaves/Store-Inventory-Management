@@ -31,4 +31,5 @@ A application that allows the user to keep track on the items that they want to.
     - Clone the project to your local machine;
     - Create a virtual environment and activate it;
     - Install the requirements;
+    - Define the environment variables;
     - Run the application.
